@@ -1,0 +1,16 @@
+header {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    top: 120px;
+    padding: 0.5em;
+    background-color: #6D3636;
+    background-image: url("../images/black-orchid.png");
+}
+
+div {
+    margin: auto;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
