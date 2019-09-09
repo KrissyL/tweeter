@@ -1,0 +1,27 @@
+form {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    padding-bottom: 1em;
+}
+
+textarea {
+    width: 100%;
+    margin: inherit;
+    border-style: hidden;
+    border-bottom: solid 3px;
+}
+
+input {
+    background-color: #4056A1;
+    border-style: hidden;
+    border-radius: 3px;
+    padding: 0.75em;
+    font-family: "Bungee", sans-serif;
+    font-size: smaller;
+    color: #FFF;
+}
+
+.counter {
+    float: right;
+}
