@@ -1,0 +1,16 @@
+ /* Navbar styling */
+ nav {
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    padding: 1.5em;
+    color: #FFF;
+    background-color: #4056A1;
+
+ }
+ 
+ /* logo */
+ span {
+    font-family: "Bungee", sans-serif;
+  }
