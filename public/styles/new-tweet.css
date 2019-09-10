@@ -25,3 +25,7 @@ input {
 .counter {
     float: right;
 }
+
+.counter.negCounter{
+    color: #ff0000;
+}
