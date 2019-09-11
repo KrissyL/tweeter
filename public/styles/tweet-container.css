@@ -1,19 +1,19 @@
-article {
+.tweet {
     width: 90%;
     border: solid 3px;
     position: relative;
-    margin: auto;
+    margin: 1em auto;
     padding: 0.5em;
     bottom: 0.75em;
 }
 
-article:hover {
+.tweet:hover {
     border: solid 5px;
     box-shadow: 5px 5px #8a8a8a;
     font-size: 105%;
 }
 
-article:hover .hide {
+.tweet:hover .hide {
     visibility: visible;
 }
 
@@ -39,4 +39,8 @@ aside {
 footer {
     padding-top: 0.75em;
     border-top: solid 2px;
+}
+
+footer img {
+    float: right;
 }
