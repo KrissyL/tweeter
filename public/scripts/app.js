@@ -30,6 +30,12 @@ const data = [
   ]
 
  $(document).ready(function() {
+
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      createTweetElement(tweet);
+    }
+  };
  
   const createTweetElement = function(data) {
       // create a new tweet
@@ -37,24 +43,23 @@ const data = [
     $("<article>").addClass("tweet")
     .append(
       $("<header>").append(
-        ($("<aside>").addClass("hide").text(data.user.handle))
+        ($("<aside>").addClass("hide").text(data.user.handle))//appended inside header
         )
       .append(
         (
-          $("<figure>").append(`<img src=${data.user.avatars}>`)
-          .append(data.user.name)
+          $("<figure>").append(`<img src=${data.user.avatars}>`)//appended inside header
+          .append(data.user.name)//user name with avatar centered to it
         )
       )
     )
-    .append($("<p>").text(data.content.text))
+    .append($("<p>").text(data.content.text))//tweet text
     .append(
       $("<footer>").append(
-        ($("<time>").text(data.created_at))
+        ($("<time>").text(data.created_at))//time it was posted at (to be modified)
         .append(`<img src="/images/icons/tweet-icons.png">`)
       )
     );
     $('#tweets-container').append($tweet);
   }
-  createTweetElement(data[0]);
-  createTweetElement(data[1]);
+  renderTweets(data);
 })
