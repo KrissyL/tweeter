@@ -1,27 +1,28 @@
 article {
-
-}
-
-header {
-
+    width: 90%;
+    border: solid 3px;
+    position: relative;
+    margin: auto;
+    padding: 0.5em;
+    bottom: 0.5em;
 }
 
 figure {
-
+    margin: 0;
+    padding: 0;
+    font-size: 90%;
 }
 
-figcaption {
-
+figure img {
+    vertical-align: middle;  
 }
 
 aside {
-
+    float: right;
+    font-size: 90%;
 }
 
 footer {
-
-}
-
-time {
-    
+    padding-top: 0.75em;
+    border-top: solid 2px;
 }
