@@ -4,7 +4,17 @@ article {
     position: relative;
     margin: auto;
     padding: 0.5em;
-    bottom: 0.5em;
+    bottom: 0.75em;
+}
+
+article:hover {
+    border: solid 5px;
+    box-shadow: 5px 5px #8a8a8a;
+    font-size: 105%;
+}
+
+article:hover .hide {
+    visibility: visible;
 }
 
 figure {
@@ -20,6 +30,10 @@ figure img {
 aside {
     float: right;
     font-size: 90%;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 footer {
