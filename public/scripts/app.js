@@ -7,20 +7,25 @@ $(document).ready(() => { //will not run any code until the document is loaded
   const form = $('#new-tweet-form');
   form.on('submit', (evt) => {
     evt.preventDefault();
-    const text = $('#tweet-text').val();
-    const textObj = {
-      value: text,
-    };
+
       $.ajax({
       url: '/tweets',
       type: 'POST',
       data: form.serialize()
     })
-    .then(renderTweets)
+    .then(loadTweets)
   });
 })
 
-//renders all previous tweets
+//loads all tweets plus the newly created tweet
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets'
+  })
+  .then(renderTweets);
+}
+
+//renders all tweets
 const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       createTweetElement(tweet);
