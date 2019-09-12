@@ -19,7 +19,7 @@ $(document).ready(() => { //will not run any code until the document is loaded
 
 //loads all tweets plus the newly created tweet
 const loadTweets = function() {
-  $.ajax({
+  $.ajax({ //get request to call all tweets
     url: '/tweets'
   })
   .then(renderTweets);
