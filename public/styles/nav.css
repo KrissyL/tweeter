@@ -4,13 +4,40 @@
     width: 100%;
     position: fixed;
     z-index: 10;
-    padding: 1.5em;
+    padding: 1.5em 0.5em;
     color: #FFF;
     background-color: #4056A1;
 
  }
  
- /* logo */
- span {
+ .logo {
+    float: left;
     font-family: "Bungee", sans-serif;
+    font-size: 125%;
   }
+
+ .tweet-toggle {
+    float: right;
+    position: relative;
+    font-size: 80%;
+ }
+
+ .arrow {
+      animation: MoveUpDown 0.75s linear infinite;
+      position: relative;
+      left: 0;
+      bottom: 0;
+    }
+    
+    @keyframes MoveUpDown {
+      0%, 100% {
+        bottom: -5px;
+      }
+      50% {
+        bottom: 5px;
+      }
+    }
+
+ .arrow:hover {
+    animation: none;
+ }
