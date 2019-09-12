@@ -3,63 +3,53 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from initial-tweets.json
-const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+$(document).ready(() => { //will not run any code until the document is loaded
+  const form = $('#new-tweet-form');
+  form.on('submit', (evt) => {
+    evt.preventDefault();
+    const text = $('#tweet-text').val();
+    const textObj = {
+      value: text,
+    };
+      $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: form.serialize()
+    })
+    .then(renderTweets)
+  });
+})
 
- $(document).ready(function() {
-
-  const renderTweets = function(tweets) {
+//renders all previous tweets
+const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       createTweetElement(tweet);
     }
   };
- 
-  const createTweetElement = function(data) {
-      // create a new tweet
-    const $tweet = 
-    $("<article>").addClass("tweet")
-    .append(
-      $("<header>").append(
-        ($("<aside>").addClass("hide").text(data.user.handle))//appended inside header
-        )
+
+//create a new tweet
+const createTweetElement = function(data) {
+  //template for all new tweets
+  const $tweet = 
+  $("<article>").addClass("tweet")
+  .append(
+    $("<header>")
       .append(
-        (
-          $("<figure>").append(`<img src=${data.user.avatars}>`)//appended inside header
-          .append(data.user.name)//user name with avatar centered to it
-        )
+      ($("<aside>").addClass("hide").text(data.user.handle))//appended inside header
       )
-    )
-    .append($("<p>").text(data.content.text))//tweet text
     .append(
-      $("<footer>").append(
-        ($("<time>").text(data.created_at))//time it was posted at (to be modified)
-        .append(`<img src="/images/icons/tweet-icons.png">`)
-      )
-    );
-    $('#tweets-container').append($tweet);
-  }
-  renderTweets(data);
-})
+      ($("<figure>").append(`<img src=${data.user.avatars}>`)//appended inside header
+      .append(data.user.name))//user name with avatar centered to it
+    )
+  )
+  .append($("<p>").text(data.content.text))//tweet text
+  .append(
+    $("<footer>").append(
+      ($("<time>").text(data.created_at))//time it was posted at (to be modified)
+      .append(`<img src="/images/icons/tweet-icons.png">`)
+    )
+  );
+  $('#tweets-container').append($tweet);//add new tweet to the tweets-container in index.html
+}
+
+
