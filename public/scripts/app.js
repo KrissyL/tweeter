@@ -54,7 +54,7 @@ const createTweetElement = function(data) {
       .append(`<img src="/images/icons/tweet-icons.png">`)
     )
   );
-  $('#tweets-container').append($tweet);//add new tweet to the tweets-container in index.html
+  $('#tweets-container').prepend($tweet);//add new tweet to the tweets-container in index.html
 }
 
 
