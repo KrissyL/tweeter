@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => { //will not run any code until the document is loaded
+  showNewTweet();
   const form = $('#new-tweet-form');
   form.on('submit', (evt) => {
     evt.preventDefault();
@@ -16,6 +17,12 @@ $(document).ready(() => { //will not run any code until the document is loaded
     .then(loadTweets)
   });
 })
+//function to show new-tweet on arrow click
+const showNewTweet = function () {
+  $('.arrow').on('click', (() => {
+    $('.new-tweet').slideToggle(400);
+  }))
+};
 
 //loads all tweets plus the newly created tweet
 const loadTweets = function() {
