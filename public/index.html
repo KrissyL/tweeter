@@ -25,11 +25,11 @@
     <!-- tweet container CSS -->
     <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- character counter javascript -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -61,7 +61,7 @@
     <main class="container">
 
       <section class="new-tweet">               
-        <form action="/tweets" method="POST">
+        <form id="new-tweet-form">
           <h2>Compose Tweet</h2> 
           <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
@@ -70,26 +70,10 @@
       </section>
       
       <section id="tweets-container">
-
-      <!-- html template for tweets -->
-      <!-- <article class="tweet">
-        <header>
-          <aside class="hide">@user-handle</aside> -->
-          <!-- use for user icon -->
-          <!-- <figure>
-            <img src="https://i.imgur.com/nlhLi3I.png" alt="User Icon Goes Here" />
-            name (should appear next to icon)
-          </figure>           -->
-          <!-- tweet text -->
-          <!-- <p>I Quit Social Media for a Year and Nothing Magical Happened (<a href="this is a fake link">joshcsimmons.com</a>)</p>
-        </header>
-        <footer>
-          <time>time stamp</time>
-          <img src="/images/icons/tweet-icons.png" alt="tweet icons" />
-        </footer>
-      </article> -->
+        <!-- new tweets show up here -->
       </section>
+      
     </main>
-
+    
   </body>
 </html>
