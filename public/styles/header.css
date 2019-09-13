@@ -1,4 +1,6 @@
 .user {
+    display: flex;
+    flex-flow: column;
     height: 400px;
     width: 100%;
     position: relative;
@@ -14,4 +16,10 @@ div {
     position: relative;
     width: 50%;
     text-align: center;
+}
+
+@media screen and (max-width: 1023px) {
+    .user {
+        height: 300px;
+    }
 }

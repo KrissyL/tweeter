@@ -1,8 +1,8 @@
 .tweet {
-    width: 90%;
+    width: 100%;
     border: solid 3px;
     position: relative;
-    margin: 1em auto;
+    margin: 0.5em;
     padding: 0.5em;
     bottom: 0.75em;
 }
@@ -55,7 +55,6 @@ footer img {
     }
 
     .tweet {
-        width: 100%;
         margin: 0.25em auto;
     }
 }
