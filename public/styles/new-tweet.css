@@ -22,10 +22,17 @@ input {
     color: #FFF;
 }
 
-.counter {
-    float: right;
+.error {
+    border: solid 3px firebrick;
+    color: #ff0000;
+
 }
 
-.counter.negCounter{
+.counter {
+    float: right;
+    font-family: "Bungee", sans-serif;
+}
+
+.negCounter{
     color: #ff0000;
 }
