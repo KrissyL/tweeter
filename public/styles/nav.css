@@ -19,10 +19,11 @@
  .tweet-toggle {
     float: right;
     position: relative;
+    padding-right: 1em;
     font-size: 80%;
  }
 
- .arrow {
+ .arrow:hover {
       animation: MoveUpDown 0.75s linear infinite;
       position: relative;
       left: 0;
@@ -38,6 +39,6 @@
       }
     }
 
- .arrow:hover {
+ .arrow {
     animation: none;
  }
