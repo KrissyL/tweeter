@@ -35,6 +35,7 @@ const submitCheck = function() {
   } else {
     return false;
   }
+  $('.error').css('display', 'flex');
   return true;
 };
 
