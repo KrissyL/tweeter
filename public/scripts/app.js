@@ -5,24 +5,47 @@
  */
 $(document).ready(() => { //will not run any code until the document is loaded
   showNewTweet();
-  const form = $('#new-tweet-form');
-  form.on('submit', (evt) => {
-    evt.preventDefault();
-
-      $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: form.serialize()
-    })
-    .then(loadTweets)
-  });
+  fetchTweets();
 })
+
 //function to show new-tweet on arrow click
 const showNewTweet = function () {
   $('.arrow').on('click', (() => {
     $('.new-tweet').slideToggle(400);
   }))
 };
+
+// check Tweet for character length before submitting
+const submitCheck = function() {
+  if ($('textarea').val() === "") {
+    $('.error-message').text("Your Tweet is empty, please write something");
+  } else if ($('textarea').val().length > 140) {
+    $('.error-message').text("You've written too many characters, please shorten your Tweet");
+  } else {
+    return false;
+  }
+  return true;
+};
+
+//get all tweets from the db
+const fetchTweets = function() {
+  const form = $('#new-tweet-form');
+  form.on('submit', (evt) => {
+    evt.preventDefault();
+    
+    if (submitCheck()) {
+      $('.error').slideToggle(300);
+    }
+    else {  
+      $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: form.serialize()
+    })
+    .then(loadTweets)
+  }
+  });
+}
 
 //loads all tweets plus the newly created tweet
 const loadTweets = function() {
