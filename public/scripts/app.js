@@ -28,7 +28,7 @@ const showNewTweet = function() {
 
 // check Tweet for character length before submitting
 const submitCheck = function() {
-  if ($('textarea').val() === "") {
+  if ($.trim($("textarea").val()) === "") { //trim the textarea to prevent submissions that are only whitespace
     $('.error-message').text("Your Tweet is empty, please write something");
   } else if ($('textarea').val().length > 140) {
     $('.error-message').text("You've written too many characters, please shorten your Tweet");
