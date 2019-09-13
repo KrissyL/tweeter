@@ -37,12 +37,13 @@ body {
  }
 
  @media screen and (min-width: 1024px) {
-   header {
-     width: 60%;
-   }
+    header {
+      width: 60%;
+      margin-right: 0.25em;
+    }
    main {
-     width: 80%;
-     top: 5em;
+     width: 100%;
+     top: 5.75em;
    }
  }
 
