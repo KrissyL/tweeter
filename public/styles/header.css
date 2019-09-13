@@ -4,8 +4,9 @@
     position: relative;
     top: 120px;
     padding: 0.5em;
-    background-color: #6D3636;
+    background-color: #a6f44b;
     background-image: url("../images/black-orchid.png");
+    color: #242424;
 }
 
 div {

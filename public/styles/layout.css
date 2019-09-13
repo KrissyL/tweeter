@@ -15,6 +15,7 @@ html {
  */
 
 body {
+  display: flex;
   color: #545149;
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
@@ -33,4 +34,20 @@ body {
    top: 130px;
    z-index: 8;
    background-color: inherit;
+ }
+
+ @media screen and (min-width: 1024px) {
+   header {
+     width: 60%;
+   }
+   main {
+     width: 80%;
+     top: 5em;
+   }
+ }
+
+ @media screen and (max-width: 1023px) {
+   body {
+     flex-wrap: wrap;
+   }
  }
