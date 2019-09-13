@@ -22,7 +22,12 @@ input {
     color: #FFF;
 }
 
+.new-tweet {
+    display: none;
+}
+
 .error {
+    display: none;
     border: solid 3px firebrick;
     color: #ff0000;
 
