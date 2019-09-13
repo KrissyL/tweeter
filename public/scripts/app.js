@@ -6,10 +6,20 @@
 $(document).ready(() => { //will not run any code until the document is loaded
   showNewTweet();
   fetchTweets();
+  hideError();
 })
 
+//hides the error message once the user hits a key
+const hideError = function() {
+  if ($('.error:visible')) {
+    $('textarea').on('keyup', (() => {
+      $('.error').slideUp(200);
+    }))
+  }
+};
+
 //function to show new-tweet on arrow click
-const showNewTweet = function () {
+const showNewTweet = function() {
   $('.arrow').on('click', (() => {
     $('.new-tweet').slideToggle(400);
   }))
@@ -34,7 +44,7 @@ const fetchTweets = function() {
     evt.preventDefault();
     
     if (submitCheck()) {
-      $('.error').slideToggle(300);
+      $('.error').slideDown(300);
     }
     else {  
       $.ajax({
